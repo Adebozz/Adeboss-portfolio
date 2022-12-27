@@ -1,0 +1,328 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(190, 190, 190);
+
+    
+}
+html{
+    scroll-behavior: smooth;
+}
+h1,h2,h3,h5,.name{
+    color: #000;
+}
+h1{
+    padding: 2%;
+    
+}
+/* Header section */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+    position: absolute;
+    background-color: rgba(240, 248, 255, 0);
+    width: 100%;
+}
+header .logo{
+    padding: 2% 5%;
+}
+header .logo .name{
+    border: 1px solid;
+    font-size: xx-large;
+}
+header .logo .name span{
+    background-color: rgb(192, 192, 192);
+    color: #fff;
+}
+header ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-right: 15%;
+    padding-top: 2%;
+
+}
+header ul li{
+    list-style-type: none;
+    padding-left: 5%;
+}
+header ul li a{
+    text-decoration: none;
+    padding-left: 15px;
+    color: black;
+}
+label,#menu-bar{
+    display: none;
+}
+/* home section */
+.home{
+    width: 100%;
+    height: 620px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    
+}
+
+.home-content{
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+.one{
+    padding-left: 8%;
+    color: rgba(212, 212, 212, 0);
+}
+.one h1{
+    color: #000;
+    padding-top: 5%;
+    font-size: 80px;
+}
+.one p{
+    font-size: large;
+}
+.two{
+    padding-bottom: 10%;
+    height: 150%;
+    width: 60%;
+    margin-top: -10%;
+    
+}
+button{
+    margin-top: 10%;
+    width: fit-content;
+    padding: 2% 4%;
+    border-radius: 8px;
+    border: unset;
+    box-shadow: 2px 2px 1px #000;
+    background-color: rgb(212, 212, 212);
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+button:hover{
+    background-color: rgba(212, 212, 212, 0);
+    border: 1px solid;
+}
+
+.circle{
+    background-image: linear-gradient(rgb(212, 212, 212),rgb(255, 255, 255));
+    border-radius: 100% 0% 0% 100%;
+    width: 700px;
+    height: 800px;
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    
+    
+}
+.c1{margin-top: 10%;
+    margin-left: 10%;
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    background-color: #fff;
+    overflow: hidden; 
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+.homepage h1{
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+}
+/* about section */
+.homepage{
+    width: 100%;
+    height: 600px;
+    font-size: large;
+}
+.about-content,
+.about-what{
+    padding: 5% 5% 0% 5%;
+}
+.about-contain{
+    display: flex;
+    flex-direction: row;
+}
+.con1, .con2, .con3{
+    width: 100%;
+    height: 200px;
+    margin-top: 3%;
+    padding: 0% 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.con2{
+    border-left: 1px solid rgba(212, 212, 212);
+    border-right: 1px solid rgba(212, 212, 212);
+}
+
+/* skills section */
+.skill{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: fit-content;
+}
+.sk1{
+    width: 200px;
+    height: 200px;
+    box-shadow: 2px 2px 4px #000;
+    margin: 2% 5%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sk1 .ski{
+    width: 50px;
+    height: 50px;
+}
+
+/* PROJECT SECTION */
+#projects{
+    
+    font-size: larger;
+}
+#projects p{
+    display: flex;
+    justify-content: center;
+}
+.proj1{
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+    align-items: center;
+    justify-content: center;
+}
+/* contact section */
+.locate{
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+    justify-content: center;
+}
+.map, .cont{
+    width: 30%;
+    height: 300px;
+    padding: 5%;
+    
+}
+.cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.info h2{
+    display: flex;
+    justify-content: center;
+}
+.info .icons ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.info .icons ul li{
+    list-style-type: none;
+    padding: 1% 2%;
+    
+}
+.info p{
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (max-width: 550px) {
+   #contact, #projects{
+    font-size: small;
+    height: max-content;
+   }
+    .c1{margin-top: -20%;
+        margin-left: 3%;
+        width: 200px;
+        height: 200px;
+    }
+    #about{
+        height: max-content;
+        font-size: x-small;
+        overflow: hidden;
+    }
+    
+    .sk1{
+        width: 180px;
+        height: 180px;
+    }
+    .skill{
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media (max-width: 750px) {
+    label{
+        display: initial;
+        
+    }
+    label i{
+        color: #000;
+        margin-left: -100%;
+
+    }
+    label i:checked~.navbar {
+        display: flex;
+    }
+    header ul{
+        display: none;
+    }
+    .c1{margin-top: -20%;
+        margin-left: 3%;
+        width: 200px;
+        height: 200px;
+    }
+    .one h1{
+        color: #000;
+        padding-top: 5%;
+        font-size: 20px;
+    }
+    #about{
+        height: max-content;
+        font-size: smaller;
+        overflow: hidden;
+        background-color: red;
+    }
+    #skills{
+        height: max-content;
+
+    }
+}
+@media (max-width: 1000px) {
+    .one h1{
+        
+        padding-top: 5%;
+        font-size: 40px;
+    } 
+    .c1{
+        margin-top: -10%;
+       
+        width: 300px;
+        height: 300px;
+    }
+}
+
+
+
+
