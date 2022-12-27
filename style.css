@@ -58,6 +58,15 @@ header ul li a{
 label,#menu-bar{
     display: none;
 }
+/* .close{
+    display: flex;
+    color: #fff;
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    cursor: pointer;
+} */
+
 /* home section */
 .home{
     width: 100%;
@@ -245,6 +254,16 @@ img{
     display: flex;
     justify-content: center;
 }
+.gotopbtn{
+    width: 80px;
+    height: 20px;
+    color: white;
+    background-color: rgba(212, 212, 212);
+    position: fixed;
+    bottom: 40px;
+    right: 50px;
+    text-decoration: none;
+}
 
 
 @media (max-width: 550px) {
@@ -273,6 +292,18 @@ img{
     }
 }
 @media (max-width: 750px) {
+    .navbar{
+        display: none;
+        flex-direction: column;
+        background-color: rgba(212, 212, 212, 0.616);
+        position: absolute;
+        justify-content: center;
+        right: 30px;
+        width: 30px;
+        height: 120px;
+        
+
+    }
     label{
         display: initial;
         
@@ -282,9 +313,15 @@ img{
         margin-left: -100%;
 
     }
+    .fa-xmark{
+        margin-left: 300%;
+        color: #fff;
+        display: none;
+    }
     label i:checked~.navbar {
         display: flex;
     }
+    
     header ul{
         display: none;
     }
