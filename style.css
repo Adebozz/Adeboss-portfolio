@@ -255,7 +255,9 @@ img{
     position: fixed;
     bottom: 40px;
     right: 50px;
+    padding: 5px ;
     text-decoration: none;
+    display: none;
 }
 
 
@@ -311,10 +313,12 @@ img{
         color: #fff;
         display: none;
     }
-    label i:checked~.navbar {
+    /* label i:checked~.navbar {
         display: flex;
+    } */
+    .Offclicked {
+        display: none;
     }
-    
     header ul{
         display: none;
     }

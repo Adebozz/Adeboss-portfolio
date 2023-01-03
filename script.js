@@ -21,8 +21,15 @@ var menuList = document.getElementsByClassName('navbar')[0];
 menuList.style.maxHeight= "0px"
 
 function clicked(){
+
     document.getElementsByClassName('navbar')[0].style.display= "flex";
     document.getElementsByClassName('clicked')[0].style.display= "none";
+    document.getElementsByClassName('Offclicked')[0].style.display= "unset";
    
-   
+}
+
+function Offclicked(){
+    document.getElementsByClassName('navbar')[0].style.display= "none";
+    document.getElementsByClassName('clicked')[0].style.display= "unset";
+    document.getElementsByClassName('Offclicked')[0].style.display= "none";
 }
