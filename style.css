@@ -58,14 +58,7 @@ header ul li a{
 label,#menu-bar{
     display: none;
 }
-/* .close{
-    display: flex;
-    color: #fff;
-    position: absolute;
-    top: 4%;
-    right: 4%;
-    cursor: pointer;
-} */
+
 
 /* home section */
 .home{
