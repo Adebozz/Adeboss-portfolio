@@ -179,6 +179,10 @@ img{
     flex-wrap: wrap;
     height: fit-content;
 }
+#skills{
+    height: max-content;
+
+}
 .sk1{
     width: 200px;
     height: 200px;
@@ -248,16 +252,17 @@ img{
     justify-content: center;
 }
 .gotopbtn{
-    width: 80px;
-    height: 20px;
-    color: white;
     background-color: rgba(212, 212, 212);
     position: fixed;
     bottom: 40px;
     right: 50px;
-    padding: 5px ;
+    padding: 1%;
     text-decoration: none;
     display: none;
+    border-radius: 100%;
+}
+.fa-arrow-up{
+    color: #fff;
 }
 
 
@@ -308,11 +313,11 @@ img{
         margin-left: -100%;
 
     }
-    .fa-xmark{
+    /* .fa-xmark{
         margin-left: 300%;
         color: #fff;
         display: none;
-    }
+    } */
     /* label i:checked~.navbar {
         display: flex;
     } */
@@ -336,7 +341,7 @@ img{
         height: max-content;
         font-size: smaller;
         overflow: hidden;
-        background-color: red;
+        
     }
     #skills{
         height: max-content;
