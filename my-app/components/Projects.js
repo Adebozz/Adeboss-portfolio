@@ -6,7 +6,7 @@ const Projects = () => {
        <div className="homepage" id="projects">
         <h1>PROJECTS</h1>
         <p>These are some of my projects  consisting of Web applications, Graphics designs and User interface of an applications.</p>
-        <div className="proj1">
+        <div className="proj1 flex flex-row justify-between">
             <div className="sk1"><h5>E-commance Website</h5> 
             <div>This a an E-commance site built with nextjs, taiwind , reactjs and postgres</div></div>
             <div className="sk1"><h5>pdf-converter</h5>
