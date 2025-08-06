@@ -9,7 +9,7 @@ const Projects = () => {
         <div className="proj1 flex flex-row justify-between">
             <div className="sk1"><h5>E-commance Website</h5> 
             <div>This a an E-commance site built with nextjs, taiwind , reactjs and postgres</div></div>
-            <div className="sk1"><h5>pdf-converter</h5>
+            <div className="sk1 text-black"><h5>pdf-converter</h5>
                <div>This is a pdf file converter. it converts files to pdf and from pdf to others. It was built with reactjs, tailwind, css and mongodb to save the file</div> </div>
             <div className="sk1 text-black"><h5>food-del</h5> 
               <div>This is a food delivery site where you can order food online and it would be delivered to you. It was built with reactjs, tailwind, css, rest api and mongodb</div> </div>
