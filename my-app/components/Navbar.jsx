@@ -1,76 +1,47 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import ThemeToggle from "./ThemeToggle";
+import { useTheme } from "@/context/ThemeContext";
+import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-
-  const menuLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-  ];
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="fixed w-full top-0 left-0 z-50 bg-white dark:bg-gray-900 shadow-md">
-      <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-        {/* Logo */}
-        <a
-          href="#home"
-          className="text-2xl font-bold text-gray-900 dark:text-white"
-        >
-          MyPortfolio
-        </a>
+    <nav className="fixed w-full bg-white dark:bg-gray-900 shadow-md z-50">
+      <div className="container mx-auto flex justify-between items-center px-4 py-3">
+        <Link href="/" className="text-2xl font-bold">My Portfolio</Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6">
-          {menuLinks.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
-          <li>
-            <ThemeToggle />
-          </li>
-        </ul>
+        <div className="hidden md:flex gap-6 items-center">
+          <Link href="#home">Home</Link>
+          <Link href="#about">About</Link>
+          <Link href="#projects">Projects</Link>
+          <Link href="#contact">Contact</Link>
+
+          {/* Theme Toggle */}
+          <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+            {theme === "light" ? <FaMoon /> : <FaSun />}
+          </button>
+        </div>
 
         {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden text-gray-900 dark:text-white"
-        >
-          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden">
+          {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 px-4 py-6">
-          <ul className="space-y-4">
-            {menuLinks.map((link) => (
-              <li key={link.name}>
-                <a
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
-            <li>
-              <ThemeToggle />
-            </li>
-          </ul>
+        <div className="md:hidden flex flex-col items-center gap-4 bg-white dark:bg-gray-900 py-4">
+          <Link href="#home" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link href="#about" onClick={() => setMenuOpen(false)}>About</Link>
+          <Link href="#projects" onClick={() => setMenuOpen(false)}>Projects</Link>
+          <Link href="#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+            {theme === "light" ? <FaMoon /> : <FaSun />}
+          </button>
         </div>
       )}
     </nav>

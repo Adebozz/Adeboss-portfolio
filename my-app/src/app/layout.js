@@ -1,36 +1,24 @@
-"use client";
-import { useEffect, useState } from "react";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import BackToTopButton from "@/components/BackToTopButton";
+import { ThemeProvider } from "@/context/ThemeContext";
+
+export const metadata = {
+  title: "My Portfolio",
+  description: "Portfolio built with Next.js and Tailwind CSS",
+};
 
 export default function RootLayout({ children }) {
-  const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.add(savedTheme);
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(newTheme);
-  };
-
   return (
-    <html lang="en" className={theme}>
-      <body className="bg-white text-black dark:bg-gray-900 dark:text-white">
-        <button
-          onClick={toggleTheme}
-          className="fixed top-4 right-4 p-2 rounded bg-gray-200 dark:bg-gray-700"
-        >
-          {theme === "light" ? "🌙" : "☀️"}
-        </button>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <BackToTopButton />
+        </ThemeProvider>
       </body>
     </html>
   );
