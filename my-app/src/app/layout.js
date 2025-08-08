@@ -1,8 +1,8 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import BackToTopButton from "@/components/BackToTopButton";
-import { ThemeProvider } from "@/context/ThemeContext";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import BackToTopButton from "../../components/BackToTopButton";
+import { ThemeProvider } from "../../components/context/ThemeContext";
 
 export const metadata = {
   title: "My Portfolio",

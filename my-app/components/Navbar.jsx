@@ -1,49 +1,43 @@
 "use client";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
-import { useTheme } from "@/context/ThemeContext";
-import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => setIsMounted(true), []);
+  if (!isMounted) return null;
+
+  const links = ["Home", "About", "Projects", "Contact"];
 
   return (
-    <nav className="fixed w-full bg-white dark:bg-gray-900 shadow-md z-50">
-      <div className="container mx-auto flex justify-between items-center px-4 py-3">
-        <Link href="/" className="text-2xl font-bold">My Portfolio</Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex gap-6 items-center">
-          <Link href="#home">Home</Link>
-          <Link href="#about">About</Link>
-          <Link href="#projects">Projects</Link>
-          <Link href="#contact">Contact</Link>
-
-          {/* Theme Toggle */}
-          <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-            {theme === "light" ? <FaMoon /> : <FaSun />}
-          </button>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden">
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </button>
+    <motion.nav
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-50 shadow-sm"
+    >
+      <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+        <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+          MyPortfolio
+        </h1>
+        <ul className="flex gap-6">
+          {links.map((link) => (
+            <motion.li
+              key={link}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                href={`#${link.toLowerCase()}`}
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-500"
+              >
+                {link}
+              </Link>
+            </motion.li>
+          ))}
+        </ul>
       </div>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden flex flex-col items-center gap-4 bg-white dark:bg-gray-900 py-4">
-          <Link href="#home" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="#about" onClick={() => setMenuOpen(false)}>About</Link>
-          <Link href="#projects" onClick={() => setMenuOpen(false)}>Projects</Link>
-          <Link href="#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-          <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-            {theme === "light" ? <FaMoon /> : <FaSun />}
-          </button>
-        </div>
-      )}
-    </nav>
+    </motion.nav>
   );
 }
