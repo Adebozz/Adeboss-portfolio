@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Header from "../../components/Header";
-import About from "../../components/About";
-import Skills from "../../components/Skills";
+import Header from "../../components/HeaderSection";
+import About from "../../components/AboutSection";
+import Skills from "../../components/SkillsSection";
 
 export default function Home() {
   return (
