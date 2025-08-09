@@ -1,20 +1,18 @@
 "use client";
 import React from "react";
-import Navbar from "../../components/Navbar";
 import HomeSection from "../../components/HomeSection";
 import AboutSection from "../../components/AboutSection";
 import ProjectsSection from "../../components/ProjectsSection";
 import ContactSection from "../../components/ContactSection";
-import Footer from "../../components/Footer";
+
 
 export default function Page() {
   return (
     <main className="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-      {/* Navbar */}
-      <Navbar />
+    
 
       {/* Sections */}
-      <section id="home" className="min-h-screen flex items-center justify-center">
+      <section id="home" className="min-h-screen flex items-center justify-center text-blue">
         <HomeSection />
       </section>
 
@@ -30,8 +28,7 @@ export default function Page() {
         <ContactSection />
       </section>
 
-      {/* Footer */}
-      <Footer />
+     
     </main>
   );
 }
