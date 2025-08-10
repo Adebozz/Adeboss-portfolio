@@ -12,7 +12,7 @@ export default function Page() {
     
 
       {/* Sections */}
-      <section id="home" className="min-h-screen flex items-center justify-center text-blue">
+      <section id="home" className="min-h-screen flex items-center justify-center">
         <HomeSection />
       </section>
 
